@@ -45,7 +45,8 @@ public class SalaryInfo {
 
         String ls = System.lineSeparator();
         StringBuilder builder = new StringBuilder();
-        builder.append("Report for period ").append(dateFrom).append(" - ").append(dateTo).append(ls);
+        builder.append("Report for period ").append(dateFrom).append(" - ")
+                .append(dateTo).append(ls);
 
         for (int i = 0; i < names.length; i++) {
             builder.append(names[i]).append(" - ").append(sums[i]);
@@ -60,14 +61,24 @@ public class SalaryInfo {
     private boolean isInRange(int d, int m, int y,
                               int fromD, int fromM, int fromY,
                               int toD, int toM, int toY) {
-        if (y < fromY || y > toY) return false;
+        if (y < fromY || y > toY) {
+            return false;
+        }
         if (y == fromY) {
-            if (m < fromM) return false;
-            if (m == fromM && d < fromD) return false;
+            if (m < fromM) {
+                return false;
+            }
+            if (m == fromM && d < fromD) {
+                return false;
+            }
         }
         if (y == toY) {
-            if (m > toM) return false;
-            if (m == toM && d > toD) return false;
+            if (m > toM) {
+                return false;
+            }
+            if (m == toM && d > toD) {
+                return false;
+            }
         }
         return true;
     }
