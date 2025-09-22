@@ -83,3 +83,4 @@ public class SalaryInfo {
         return true;
     }
 }
+
